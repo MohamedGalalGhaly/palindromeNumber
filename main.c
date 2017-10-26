@@ -3,7 +3,7 @@
 
 int main()
 {
-    int arr [20], temp, j, reversedNum = 0, num, i = 0, count = 0;
+    int digit, temp, j, reversedNum = 0, num, i = 0, count = 0;
 
     scanf("%i",&num);
 
@@ -11,15 +11,9 @@ int main()
 
     while (temp != 0)
     {
-        arr[i] = temp % 10;
+        digit = temp % 10;
         temp = temp / 10;
-        i++;
-    }
-
-    for (j=i-1; j>=0; j--)
-    {
-        reversedNum += arr[j] * pow (10,count);
-        count ++;
+        reversedNum = reversedNum*10 + digit;
     }
 
     if (num == reversedNum)
